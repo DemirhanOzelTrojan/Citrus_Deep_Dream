@@ -41,7 +41,6 @@ Deep_Dream is a python script which was written to use the pretrained "inception
             for _ in range(iter_n):
                 g = calc_grad_tiled(img, t_grad)
                 img += g * (step / (np.abs(g).mean() + 1e-7))
-
 '''
 
 The render_deepdream() function takes an image parameter and a number of steps and iterations as well as a scale for resizing octaves. Alongside it's other parameters it takes a tensor from the inception model at which it renders the image and then stores it. 
@@ -50,9 +49,9 @@ render_deepdream () takes the input image splits it into octaves and resizes the
 
 All octaves are stored in an array and then matplotlib is used to arrange the octaves to form a proper image.
 
-'''python
-render_deepdream(tf.square(T('mixed4c')), img0)
-'''
+  '''python
+     render_deepdream(tf.square(T('mixed4c')), img0)
+  '''
 
 This function will render what the network sees at the specified "layer" for T. This can be modified by simply replacing the parameter. For a list of all valid inception layers, pleas visit: data/models.txt.
 
