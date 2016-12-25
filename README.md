@@ -58,13 +58,13 @@ This function will render what the network sees at the specified "layer" for T. 
 ##User Guide:
  '''python
  
-import matplotlib.pyplot as plt
-import numpy as np
-import PIL.Image
-import tensorflow as tf
-import os
-import zipfile
-'''
+    import matplotlib.pyplot as plt
+    import numpy as np
+    import PIL.Image
+    import tensorflow as tf
+    import os
+    import zipfile
+  '''
 
 Please make sure that all coresponding packages have been installed through an appropriate python package manager.
 
@@ -72,16 +72,16 @@ Please make sure that all coresponding packages have been installed through an a
 To install tensorflow, please issue the following command in your command prompt.
 
 #### For GPU Tensorflow: (reccomended)
-'''shell
+
 pip install --upgrade https://storage.googleapis.com/tensorflow/windows/gpu/tensorflow_gpu-0.12.0-cp35-cp35m-win_amd64.whl
-'''
+
 
 for GPU tensorflow, please ensure that you are using the proper Nvidia Nsight drivers, and the latest CUDNN package by Nvidia.
 
 #### For CPU Tensorflow: 
-'''shell
+
 pip install --upgrade https://storage.googleapis.com/tensorflow/windows/cpu/tensorflow-0.12.0-cp35-cp35m-win_amd64.whl
-'''
+
 
 
 
