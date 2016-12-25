@@ -18,7 +18,7 @@ Deep_Dream is a python script which was written to use the pretrained "inception
 
 ##Explanation:
 
-  def render_deepdream(t_obj, img0=img_noise,
+      def render_deepdream(t_obj, img0=img_noise,
                            iter_n=10, step=1.5, octave_n=4, octave_scale=1.4):
           t_score = tf.reduce_mean(t_obj)  # defining the optimization objective
           t_grad = tf.gradients(t_score, t_input)[0]  # behold the power of automatic differentiation!
