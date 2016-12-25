@@ -1,9 +1,12 @@
 # Deep_Dream
 
-## Original Image:
-![Alt text](http://i.imgur.com/cBXynzZ.png "")
 
-## Result: 
+
+
+### Original Image:
+![Alt text](http://i.imgur.com/6FAzGVY.png "")
+
+### Result: 
 ![Alt text](http://i.imgur.com/eGV6IKH.png "")
 
 
