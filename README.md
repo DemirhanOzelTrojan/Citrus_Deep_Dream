@@ -1,9 +1,9 @@
 # Deep_Dream
 
 ## Original Image:
-![Alt text](http://imgur.com/a/ihrsU "")
+![Alt text](http://i.imgur.com/cBXynzZ.png "")
 
 ## Result: 
-![Alt text](http://imgur.com/a/ZORur "")
+![Alt text](http://i.imgur.com/eGV6IKH.png "")
 
 
