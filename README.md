@@ -17,31 +17,31 @@ Deep_Dream is a python script which was written to use the pretrained "inception
 
 
 ##Explanation:
-'''python
+
   def render_deepdream(t_obj, img0=img_noise,
-                         iter_n=10, step=1.5, octave_n=4, octave_scale=1.4):
-        t_score = tf.reduce_mean(t_obj)  # defining the optimization objective
-        t_grad = tf.gradients(t_score, t_input)[0]  # behold the power of automatic differentiation!
+                           iter_n=10, step=1.5, octave_n=4, octave_scale=1.4):
+          t_score = tf.reduce_mean(t_obj)  # defining the optimization objective
+          t_grad = tf.gradients(t_score, t_input)[0]  # behold the power of automatic differentiation!
 
-        # split the image into a number of octaves
-        img = img0
-        octaves = []
-        for _ in range(octave_n - 1):
-            hw = img.shape[:2]
-            lo = resize(img, np.int32(np.float32(hw) / octave_scale))
-            hi = img - resize(lo, hw)
-            img = lo
-            octaves.append(hi)
+          # split the image into a number of octaves
+          img = img0
+          octaves = []
+          for _ in range(octave_n - 1):
+              hw = img.shape[:2]
+              lo = resize(img, np.int32(np.float32(hw) / octave_scale))
+              hi = img - resize(lo, hw)
+              img = lo
+              octaves.append(hi)
 
-        # generate details octave by octave
-        for octave in range(octave_n):
-            if octave > 0:
-                hi = octaves[-octave]
-                img = resize(img, hi.shape[:2]) + hi
-            for _ in range(iter_n):
-                g = calc_grad_tiled(img, t_grad)
-                img += g * (step / (np.abs(g).mean() + 1e-7))
-'''
+          # generate details octave by octave
+          for octave in range(octave_n):
+              if octave > 0:
+                  hi = octaves[-octave]
+                  img = resize(img, hi.shape[:2]) + hi
+              for _ in range(iter_n):
+                  g = calc_grad_tiled(img, t_grad)
+                  img += g * (step / (np.abs(g).mean() + 1e-7))
+
 
 The render_deepdream() function takes an image parameter and a number of steps and iterations as well as a scale for resizing octaves. Alongside it's other parameters it takes a tensor from the inception model at which it renders the image and then stores it. 
 
@@ -49,14 +49,14 @@ render_deepdream () takes the input image splits it into octaves and resizes the
 
 All octaves are stored in an array and then matplotlib is used to arrange the octaves to form a proper image.
 
-  '''python
+  
      render_deepdream(tf.square(T('mixed4c')), img0)
-  '''
+  
 
 This function will render what the network sees at the specified "layer" for T. This can be modified by simply replacing the parameter. For a list of all valid inception layers, pleas visit: data/models.txt.
 
 ##User Guide:
- '''python
+
  
     import matplotlib.pyplot as plt
     import numpy as np
@@ -64,7 +64,7 @@ This function will render what the network sees at the specified "layer" for T. 
     import tensorflow as tf
     import os
     import zipfile
-  '''
+
 
 Please make sure that all coresponding packages have been installed through an appropriate python package manager.
 
